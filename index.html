@@ -13,7 +13,7 @@
 
 <body>
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 <style>
   * {
   /*text-align: center;*/
@@ -22,26 +22,46 @@
 }
 
 div {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f9f9f9;
-  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  
 }
   
+h1 {
+ font-family: '', sans-serif;
+}
   
+.frame2 {
+  width: 30%;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  @media only screen and (max-width: 800px) {
+  .frame2 {
+  width: 60%;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+    
 input {
   width: 100%;
   border: none;
+  border-bottom: 1px solid grey;
+  background-color: #f9f9f9;
 }
 #button {
   height: 19px;
   color: white;
   background-color: #3cb4e5;
   border: none;
+  transition: all .2s ease-in-out; 
 }
   
-  #button:hover {
-    background-color: #00c4b3;
-  }
+#button:hover {
+  background-color: #00c4b3;
+  transform: scale(1.01); 
+}
 
 </style>
 
@@ -112,10 +132,10 @@ input {
   
   <!-- Start Google Transit-->
 
-  <div class="frame2"><div style="border: none; overflow: hidden; margin: 0px auto; width: 250px;">
+  <div class="frame2"><div style="border: none; overflow: hidden; margin: 0px auto;">
   <div class="google">
- <form name="myForm"><table width="250" cellspacing="1" border="0">
- <tr>
+ <form name="myForm"><table width="95%" cellspacing="1" border="0">
+ <tr style="background-color: #3cb4e5; text-align: center; color: white;">
  <!--<td colspan="2" valign="middle"><img src="http://go-rts.com//schedule/images/trip-planner-sm.gif" alt="Image of Trip Planner Logo"/>-->
 <!--<img src="http://go-rts.com//schedule/images/google-power.gif" alt="Powered by Google"/>
 <a style="float:left; padding-left:3px" href="https://www.youtube.com/watch?v=f910Ppns8ig">How To Use Trip Planner</a>-->
@@ -127,39 +147,39 @@ input {
  <!---<font face="arial" size="-2">
  &nbsp;<strong></strong>&nbsp;&nbsp;<font color="#555555">e.g. The Oaks Mall <script type="text/javascript">document.write(startExample)</script></font><br/>--->
 
- &nbsp;<label id="start" for="tp_start">Start <br><input type="text" size="24" name="saddr" maxlength="2048" title="Enter the Origin Address" id="tp_start" placeholder="Enter current location.."/>
+<label id="start" for="tp_start">Start <br><input type="text" size="24" name="saddr" maxlength="2048" title="Enter the Origin Address" id="tp_start" placeholder="Enter current location.."/>
 <br/>
 
 
 
 <!--- &nbsp;<strong></strong>&nbsp;&nbsp;<font color="#555555">e.g. 401 E. University Ave <script type="text/javascript">document.write(endExample)</script></font><br/> --->
 
- &nbsp; <label id="end" for="tp_end">End <br><small></small><input type="text" size="24" name="daddr" maxlength="2048" title="Enter the Destination Address" id="tp_end" placeholder="Enter destination.."/><br/>
+<label id="end" for="tp_end">End <br><small></small><input type="text" size="24" name="daddr" maxlength="2048" title="Enter the Destination Address" id="tp_end" placeholder="Enter destination.."/><br/>
  </font>
 
  <table class="margin">
  <tr>
- <td><font face="arial" size="-2"><strong>Date</strong></font></td>
- <td><font face="arial" size="-2" ><strong >Time</strong></font></td>
  </tr>
  <tr>
 <script type="text/javascript">
- document.write('<div><td>');
- document.write('<input type="text" id="fdate" size="9" name="date" value="' + currentDate + '" maxlength="10" title="Enter the Date in MM/DD/YY format"/>');
+ //document.write('<div><td>');
+ document.write('<label>Date</> ');
+  document.write('<label style="margin-left: 39%;">Time</><br>');
+ document.write('<input type="text" id="fdate" size="9" name="date" value="' + currentDate + '" maxlength="10" title="Enter the Date in MM/DD/YY format" style="width: 40%; margin-right: 10%;"/>');
 
- document.write('</td>');
- document.write('<div><td>');
- document.write('<input type="text" id="ftime" size="3" name="time" value="' + currentTime + '" maxlength="8" title="Enter the Time in HH:MM AM or PM format" style="float: left; margin-right: 2px"/>');
+ //document.write('</td>');
+ //document.write('<div><td>');
+  
+ document.write('<input type="text" id="ftime" size="3" name="time" value="' + currentTime + '" maxlength="8" title="Enter the Time in HH:MM AM or PM format" style="width: 30%;"/>');
 
  document.write(' <select name="ampm" style="font-size: 10ps">' + amOption + pmOption + '</select>');
  document.write('</td></div></div>');
  </script>
  </tr>
  </table>
- <br/>
 <div>
  <font face="arial" size="-1">
- &nbsp;Plan by
+ Plan by
 <label for="planby">Type:</label><br>
  <select name="ttype" id="planby" style="display: inline-block; width: 100%; text-align: center;">
  <option value="dep">Departure Time
@@ -177,9 +197,3 @@ input {
 </div></div>
 
 <!-- END container_16 *** END SHADOW-->
-  
-  
-
-</body>
-
-</html>
